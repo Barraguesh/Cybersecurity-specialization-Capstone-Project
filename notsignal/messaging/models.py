@@ -2,12 +2,16 @@ from django.db import models
 from django_cryptography.fields import encrypt
 
 class Message(models.Model):
-    user = models.CharField(
+    user_from = models.CharField(
         max_length=1000,
-        verbose_name='Username'
+        verbose_name='From user'
+    )
+    user_to = models.CharField(
+        max_length=1000,
+        verbose_name='To user'
     )
     content = encrypt(models.TextField(verbose_name='Content'))
-    date = models.DateField(
+    date = models.DateTimeField(
         max_length=1000,
         verbose_name='Date'
     )

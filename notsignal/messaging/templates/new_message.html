@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block script %}
+<script>
+     setTimeout(function(){ $("#alert").fadeOut(); }, 3000);
+</script>
+{% endblock script %}
+
+{% block mainsection %}
+<div class="mb-5 w-100">
+    <div class="my-5 d-flex justify-content-center">
+        <a class="btn btn-info text-light col-1" href="{% url 'index' %}" style="font-size: 1.5em;">Inbox</a>
+    </div>
+    
+    <div class="container d-flex justify-content-center">
+        <div class="col-md-10 card p-4">
+            <h1 class="text-center">New message</h1>
+    
+            <form class="d-flex flex-column" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <div class="d-flex justify-content-center">
+                    <input type="submit" class="mt-4 btn btn-primary col-4" value="Send">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% if success %}
+<div id="alert" class="mb-2 mx-auto alert alert-success fixed-bottom col-md-8 col-xs-11" role="alert">
+    Message sent!
+</div>
+{% endif %}
+{% endblock mainsection %}

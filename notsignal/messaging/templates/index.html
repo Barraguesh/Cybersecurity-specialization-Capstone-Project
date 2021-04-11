@@ -1,4 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<h1>hello</h1>
+{% block mainsection %}
+<div class="container d-flex flex-column align-items-center mb-5 mt-4">
+    <img class="mx-auto rounded-circle mb-4" src="{% static 'img/logo.png' %}" alt="NotSignal logo" width="150em">    
+    
+    <div class="col-md-8 d-flex justify-content-between align-items-center my-4">
+        <a class="btn btn-primary" href="{% url 'new_message' %}" style="font-size: 1.5em;">+ New message</a>
+        <a class="btn btn-danger" href="{% url 'logout' %}?next=/" style="font-size: 1.5em;">Logout</a>
+    </div>
+
+    <div class="card p-2 col-md-8 col-xs-12 list-group">
+        <ul class="list-group list-group-flush">
+            {% if messages %}
+                {% for message in messages %}
+                <li class="list-group-item">
+                    <span class="d-flex justify-content-between mb-2" style="font-size: 1.25em;">
+                        <span><strong>Message from:</strong> {{ message.user_from }}</span>
+                        <span>{{ message.date }}</span>
+                    </span>
+                    <em>{{ message|linebreaks }}</em>
+                </li>
+                {% endfor %}
+            {% else %}
+                <h3 class="text-center">No messages...</h3>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+{% endblock mainsection %}
