@@ -16,10 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from notsignal import views
+
 urlpatterns = [
     #Core URLs
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
-    #Client URLs
+    path('registration/',views.registration_view,name="registration"),
+    #Models URLs
     path('', include('messaging.urls')),
+    #Extra
+    path('email', views.check_email_view, name='email'),
+    path('dbdump', views.dump_db, name='dbdump'),
 ]

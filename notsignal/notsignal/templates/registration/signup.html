@@ -1,0 +1,53 @@
+{% extends "registration/accounts_base.html" %}
+{% load static %}
+
+{% block mainsection %}
+<form class="d-flex flex-column align-items-center my-auto" method="post" action="{% url 'registration' %}">
+    {% csrf_token %}
+
+    <div class="mb-4 row col-md-8">
+        <div class="col">
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input class="form-control" type="text" name="username" maxlength="150" autocapitalize="none"
+                    autocomplete="username" autofocus="" required id="id_username" placeholder="Username">
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-2 row col-md-8">
+        <div class="col">
+            <input class="form-control" type="password" name="password1" autocomplete="new-password" required
+                id="id_password1" placeholder="Password">
+        </div>
+        <div class="col">
+            <input class="form-control" type="password" name="password2" autocomplete="new-password" required
+                id="id_password2" placeholder="Repeat password">
+        </div>
+    </div>
+
+    <span class="helptext">
+        <ul>
+            <li class="form-text text-muted" style="font-size: 1em;">Use various words separated by symbols.</li>
+            <li class="form-text text-muted" style="font-size: 1em;">Your password must contain at least 8 characters.
+            </li>
+            <li class="form-text text-muted" style="font-size: 1em;">Your password can’t be entirely numeric.</li>
+        </ul>
+    </span>
+
+
+    <div class="mt-4 form-row col-md-8 row flex-column align-items-center">
+        <input type="submit" value="Create account" class="mb-3 btn btn-primary col-md-6" />
+        <input type="hidden" name="next" value="{{ next }}" />
+    </div>
+</form>
+{% endblock mainsection %}
+
+{% block errors %}
+{% if form.errors %}
+<div class="fixed-bottom mb-2 mx-auto col-md-8 alert alert-danger alert-dismissible">
+    Invalid user or password.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+{% endblock errors %}

@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 #Custom
-web.env
+./sent_emails
