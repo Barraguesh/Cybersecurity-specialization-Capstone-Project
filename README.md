@@ -9,7 +9,7 @@
 * Python 3.6 (Django cryptography doesn't work correctly in 3.9 at this time)
 
 ## Development
-Use `docker-compose.yml` for development, it uses the Dajngo built in `runserver`. 
+Use `docker-compose.yml` for development, it uses the Django built in `runserver`. 
 
 The application is already setup for development, but you need to create a `db.sqlite3` file in the root of the Django app.
 
