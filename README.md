@@ -4,6 +4,10 @@
 # Project evaluation
 Public server located at http://34.245.84.230:8000
 
+The database dump is at http://34.245.84.230:8000/dbdump
+
+When resetting your password, it's gonna send the supposed email (if you enter a correct email address) to the page http://34.245.84.230:8000/email. This can be accessed easily by a button on the bottom of the login page (scroll to see). This is done because I didn't want to setup a mail server. All of this is prompted when going to reset the password but I comment it here as a reminder. Good luck everyone and thanks for reviewing my project!
+
 # Building and testing
 
 ## Requirements
