@@ -4,6 +4,7 @@ import os
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render
 from pathlib import Path
+from django.contrib.auth.models import User
 
 #Messaging
 from messaging.views import index_view
@@ -13,7 +14,7 @@ def registration_view(request):
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
+            User.objects.create_user(username=form.cleaned_data['username'], email=request.POST['email'], password=form.cleaned_data['password1'])
             return index_view(request)
         else:
             args["form"] = UserCreationForm(request.POST)
