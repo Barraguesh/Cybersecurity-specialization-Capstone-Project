@@ -1,6 +1,9 @@
 # NotSignal, a secure web chat messenger!
 #### Capstone project of the 4 course specialization by the University of Maryland.
 
+# Project evaluation
+Public server located at http://34.245.84.230:8000
+
 # Building and testing
 
 ## Requirements
