@@ -12,7 +12,7 @@ from messaging.forms import NewMessageForm
 @login_required
 def index_view(request):
     args = {}
-    args["messages"] = Message.objects.all().filter(user_to=request.user.username).order_by('-date')
+    args["messages"] = Message.objects.all().filter(user_to=request.user.username).order_by('-datemessaging_message')
     return render(request, "index.html", args)
 
 def new_message(request):

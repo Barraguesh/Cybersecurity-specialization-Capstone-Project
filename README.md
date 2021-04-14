@@ -1,12 +1,20 @@
 # NotSignal, a secure web chat messenger!
 #### Capstone project of the 4 course specialization by the University of Maryland.
 
-# Project evaluation
-Public server located at http://34.245.84.230:8000
+# Overview
+Message content is encrypted at rest with SHA-512.
 
-The database dump is at http://34.245.84.230:8000/dbdump
+<img src="media/login.png">
+<p style="text-align: center; color: grey;">Login page</p>
 
-When resetting your password, it's gonna send the supposed email (if you enter a correct email address) to the page http://34.245.84.230:8000/email. This can be accessed easily by a button on the bottom of the login page (scroll to see). This is done because I didn't want to setup a mail server. All of this is prompted when going to reset the password but I comment it here as a reminder. Good luck everyone and thanks for reviewing my project!
+<img src="media/signup.png">
+<p style="text-align: center; color: grey;">Signup page</p>
+
+<img src="media/inbox.png">
+<p style="text-align: center; color: grey;">Inbox</p>
+
+<img src="media/send.png">
+<p style="text-align: center; color: grey;">Sending messages</p>
 
 # Building and testing
 
@@ -18,9 +26,9 @@ When resetting your password, it's gonna send the supposed email (if you enter a
 ## Development
 Use `docker-compose.yml` for development, it uses the Django built in `runserver`. 
 
-The application is already setup for development, but you need to create a `db.sqlite3` file in the root of the Django app.
+The application is already setup for development, whenever you launch Django, it will automagically create the `db.sqlite3` file in the root of the Django app.
 
-Once the server is up and running, we need to create the database, Django makes it easy. Run the migrations:
+Once the server is up and running, we need to create the database, Django makes it easy. Just run the migrations:
 
 `sudo docker-compose exec notsignal python manage.py migrate`
 
