@@ -5,16 +5,16 @@
 Message content is encrypted at rest with SHA-512.
 
 <img src="media/login.png">
-<p style="text-align: center; color: grey;">Login page</p>
+<p align="center">Login page</p>
 
 <img src="media/signup.png">
-<p style="text-align: center; color: grey;">Signup page</p>
+<p align="center">Signup page</p>
 
 <img src="media/inbox.png">
-<p style="text-align: center; color: grey;">Inbox</p>
+<p align="center">Inbox</p>
 
 <img src="media/send.png">
-<p style="text-align: center; color: grey;">Sending messages</p>
+<p align="center">Sending messages</p>
 
 # Building and testing
 
